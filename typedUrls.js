@@ -150,12 +150,11 @@ function buildTypedUrlList(startTime, endTime) {
   // This function is called when we have the final list of URls to display.
   var onAllVisitsProcessed = function() {
     if(allVisits.length>0){
-      console.log("All Visits");
-      console.log(allVisits.length);
-      console.log(allVisits);
       addBookmark(allVisits);
       allVisits = new Array();
-      document.write("<b>User:</b><a target=\"_blank\" href=\"https://dotmarks.net/lab/history.html?u=" + anonymous  + "\">View your stats here</a><br/>");
+      var elem = document.getElementById("typedUrl_div");
+      var text = "<b>User:</b><a target=\"_blank\" href=\"https://dotmarks.net/lab/history.html?u=" + anonymous  + "\">View your stats here</a><br/>";
+      elem.innerHTML = text;
     }
   };
 }
